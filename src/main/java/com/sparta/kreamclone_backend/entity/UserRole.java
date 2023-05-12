@@ -1,8 +1,8 @@
 package com.sparta.kreamclone_backend.entity;
 
 public enum UserRole {
-    USER(Authority.USER),  // 사용자 권한
-    ADMIN(Authority.ADMIN);  // 관리자 권한
+    BUYER(Authority.BUYER),  // 사용자 권한
+    SELLER(Authority.SELLER);  // 관리자 권한
 
     private final String authority;
 
@@ -15,7 +15,7 @@ public enum UserRole {
     }
 
     public static class Authority {
-        public static final String USER = "USER";
-        public static final String ADMIN = "ADMIN";
+        public static final String BUYER = "BUYER";
+        public static final String SELLER = "SELLER";
     }
 }
