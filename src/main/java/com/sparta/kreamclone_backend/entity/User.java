@@ -11,10 +11,10 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class User extends Timestamped {
     @Id
-    @Column(name = "userId", nullable = false, unique = true)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userId;
     
-    @Column(nullable = false)
+    @Column
     private Long userKakaoId;
 
     @Column(nullable = false, unique = true)
@@ -36,8 +36,8 @@ public class User extends Timestamped {
     @Enumerated(value = EnumType.STRING)
     private UserRole role;
 
-    public User(Long userKakaoId, String userEmail, String userShoeSize, String userAddr, String userPassword, String userUrl, UserRole role) {
-        this.userKakaoId = userKakaoId;
+    public User(String userEmail, String userShoeSize, String userAddr, String userPassword, String userUrl, UserRole role) {
+//        this.userKakaoId = userKakaoId;
         this.userEmail = userEmail;
         this.userShoeSize = userShoeSize;
         this.userAddr = userAddr;
