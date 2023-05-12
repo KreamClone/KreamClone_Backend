@@ -13,31 +13,36 @@ public class User extends Timestamped {
     @Id
     @Column(name = "userId", nullable = false, unique = true)
     private String id;
+    
+    @Column(nullable = false)
+    private Long userKakaoId;
 
     @Column(nullable = false, unique = true)
-    private String userName;
+    private String userEmail;
+
+    @Column(nullable = false)
+    private String userShoeSize;
+
+    @Column(nullable = false)
+    private String userAddr;
 
     @Column(nullable = false)
     private String userPassword;
 
     @Column(nullable = false)
-    private Long userYear;
-
-    @Column(nullable = false)
-    private String userSkill;
+    private String userUrl;
 
     @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     private UserRole role;
 
-    public User(String id, String userName, String userPassword, Long userYear, String userSkill, UserRole role) {
-        this.id = id;
-        this.userName = userName;
+    public User(Long userKakaoId, String userEmail, String userShoeSize, String userAddr, String userPassword, String userUrl, UserRole role) {
+        this.userKakaoId = userKakaoId;
+        this.userEmail = userEmail;
+        this.userShoeSize = userShoeSize;
+        this.userAddr = userAddr;
         this.userPassword = userPassword;
-        this.userYear = userYear;
-        this.userSkill = userSkill;
+        this.userUrl = userUrl;
         this.role = role;
-
     }
-
 }
