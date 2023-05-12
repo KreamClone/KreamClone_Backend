@@ -15,14 +15,14 @@ public class Categories {
     private String categories_id ;
 
     @Column
-    private String categoriesName;
+    private String categoriesNm;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "productId", nullable = false)
     private Product product;
 
 
-    public Categories(String categoriesName) {
-        this.categoriesName = categoriesName;
+    public Categories(String categoriesNm) {
+        this.categoriesNm = categoriesNm;
     }
 }

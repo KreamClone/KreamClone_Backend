@@ -26,7 +26,7 @@ import static com.sparta.kreamclone_backend.util.JwtUtil.REFRESH_KEY;
 public class UserService {
     private final UserRepository userRepository;
     private final RefreshTokenRepository refreshTokenRepository;
-    private static final String ADMIN_TOKEN = "HyEoNgYuHaEjInSeOnGyUSeUnGhEeJoNgBeoMSiOk";
+    private static final String SELLER_TOKEN = "sellerTest";
     private final JwtUtil jwtUtil;
     private final PasswordEncoder passwordEncoder;
 
@@ -47,18 +47,18 @@ public class UserService {
 
         UserRole role;
 
-        if (userRole.equals("admin")) {
-            if (!ADMIN_TOKEN.equals(requestDto.getAdminToken())) {
+        if (userRole.equals("seller")) {
+            if (!SELLER_TOKEN.equals(requestDto.getAdminToken())) {
                 return new ResponseDto("토큰값이 일치하지 않습니다.", HttpStatus.BAD_REQUEST);
             }
-            role =  UserRole.ADMIN;
+            role =  UserRole.SELLER;
         }else{
-            role =  UserRole.USER;
+            role =  UserRole.BUYER;
         }
 
-        User user = new User(userId, userName, userPassword, userYear, userSkill, role);
+//        User user = new User(userId, userName, userPassword, userYear, userSkill, role);
 
-        userRepository.save(user);
+//        userRepository.save(user);
 
         return new ResponseDto("회원가입이 성공했습니다.", HttpStatus.OK);
     }
