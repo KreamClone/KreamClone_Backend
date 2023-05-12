@@ -16,10 +16,10 @@ public class Product extends Timestamped{
     private Long productId;
 
     @Column(nullable = false)
-    private String productEngName;
+    private String productEngNm;
 
     @Column(nullable = false)
-    private String productKorName;
+    private String productKorNm;
 
     @Column(nullable = false)
     private Long productNum;
@@ -36,9 +36,9 @@ public class Product extends Timestamped{
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Brand> brandList = new ArrayList<>();
 
-    public Product(String productEngName, String productKorName, Long productNum, Long productPrice) {
-        this.productEngName = productEngName;
-        this.productKorName = productKorName;
+    public Product(String productEngNm, String productKorNm, Long productNum, Long productPrice) {
+        this.productEngNm = productEngNm;
+        this.productKorNm = productKorNm;
         this.productNum = productNum;
         this.productPrice = productPrice;
     }
