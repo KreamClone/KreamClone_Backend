@@ -15,7 +15,7 @@ public enum UserRole {
     }
 
     public static class Authority {
-        public static final String  BUYER = "BUYER";
+        public static final String BUYER = "BUYER";
         public static final String SELLER = "SELLER";
     }
 }

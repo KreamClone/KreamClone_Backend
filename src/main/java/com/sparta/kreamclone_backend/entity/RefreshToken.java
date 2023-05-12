@@ -17,11 +17,11 @@ public class RefreshToken {
     @NotBlank
     private String refreshToken;
     @NotBlank
-    private String userId;
+    private String userEmail;
 
     public RefreshToken(String token, String userId) {
         this.refreshToken = token;
-        this.userId = userId;
+        this.userEmail = userId;
     }
 
     public RefreshToken updateToken(String token) {
